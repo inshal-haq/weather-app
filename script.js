@@ -5,12 +5,17 @@ async function getWeatherForecast(city) {
   try {
     const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${city}&days=${numOfForecastDays}`, {mode: 'cors'});
     if (response.status == 200) {
-      console.log(await response.json());
+      const data = await response.json();
+      displayForecast(data.forecast.forecastdays);
     }
   }
   catch(error) {
     console.log(error);
   }
+}
+
+async function displayForecast(days) {
+  
 }
 
 getWeatherForecast('london');
