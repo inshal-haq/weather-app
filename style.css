@@ -1,3 +1,5 @@
+/* GENERAL */
+
 body {
   margin: 0;
   padding: 0;
@@ -8,6 +10,8 @@ h1 {
   margin: 0;
   padding: 0;
 }
+
+/* HEADER */
 
 header {
   background-color: blanchedalmond;
@@ -41,6 +45,14 @@ main {
 
 #city {
   margin-left: 4px;
+}
+
+input[type="text"] {
+  appearance: none;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 100%;
+  padding: 4px 8px;
 }
 
 .container {

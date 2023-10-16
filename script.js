@@ -4,12 +4,23 @@ const numOfForecastDays = 3;
 let isFahrenheit = true;
 const forecastDiv = document.querySelector('#forecast-data');
 const dateDiv = document.querySelector('#forecast-date');
+const search = document.querySelector('input');
+const searchButton = document.querySelector('#search-button');
+const cityDiv = document.querySelector('#city');
+
+searchButton.addEventListener('click', () => {
+  const city = search.value || 'london';
+  getWeatherForecast(city);
+});
+
+getWeatherForecast('london');
 
 async function getWeatherForecast(city) {
   try {
     const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${city}&days=${numOfForecastDays}`, {mode: 'cors'});
     if (response.status == 200) {
       const data = await response.json();
+      cityDiv.textContent = data.location.name;
       displayForecast(data.forecast.forecastday);
     }
   }
@@ -45,5 +56,3 @@ function displayForecast(days) {
   forecastDiv.innerHTML = weatherHTML;
   dateDiv.innerHTML = dateHTML;
 }
-
-getWeatherForecast('london');
