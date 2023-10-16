@@ -14,14 +14,22 @@
 
   <main>
     <div class="search-container">
+      <div class="center-text">
+        <div>Allowed inputs:</div>
+        <div>US Zipcode, UK Postcode, Canada Postalcode, IP address, Latitude/Longitude (decimal degree) or city name</div>
+      </div>
       <div>
-        <input type="text">
+        <input type="text" placeholder="Enter location...">
         <button id="search-button">Search</button>
       </div>
       <div class="flex">
         <div>City:</div>
         <div id="city"></div>
       </div>
+    </div>
+
+    <div id="toggle-div">
+      <button id="toggle">Toggle F/C</button>
     </div>
 
     <div class="container">
